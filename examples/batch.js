@@ -14,22 +14,25 @@
  * limitations under the License.
  */
 
-var googleapis = require('../lib/googleapis.js');
-
-googleapis.load('urlshortener', 'v1', function(err, client) {
-
-  var req1 = client.urlshortener.url.get({ shortUrl: 'http://goo.gl/DdUKX' });
-  var req2 = client.urlshortener.url.list();
-
-  //build a batch request and execute
-  client.newBatchRequest()
-    .add(req1)
-    .add(req2)
-    .execute(function(err, results) {
-      if (err) {
-        console.log('One or more errors occured', err);
-      } else {
-        console.log('Responses: ', results);
-      }
-    });
-});
+class StringDemo 
+{
+  public static void main(String arg[])
+	{
+		String str="jay dhameliy";
+		String tmp="";
+		int flag=0;
+		System.out.println("indexof="+str.indexOf("a"));
+		for(int i=0;i<str.length();i++)
+		{
+			if(String.valueOf(str.charAt(i)).equals("a") && flag==0)
+			{
+				tmp+="A";
+				flag=1;
+			}
+			else
+				tmp+=str.charAt(i);
+		}
+		str=tmp;
+		System.out.println(str);
+	}
+}
